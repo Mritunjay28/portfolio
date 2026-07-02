@@ -99,7 +99,7 @@ function initSpotlight() {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       card.style.setProperty('--x', `${x}px`);
       card.style.setProperty('--y', `${y}px`);
     });
@@ -143,7 +143,7 @@ function initScrambler() {
 
 
 // --- Project Details Modal Actions ---
-window.openProjectModal = function(projectId) {
+window.openProjectModal = function (projectId) {
   const data = projectsData[projectId];
   if (!data) return;
 
@@ -158,7 +158,7 @@ window.openProjectModal = function(projectId) {
 
   // Fill in content
   title.innerText = data.title;
-  
+
   // Status Badge
   status.className = `badge ${data.statusClass}`;
   status.innerHTML = `<span class="badge-dot"></span>${data.status}`;
@@ -196,9 +196,9 @@ window.openProjectModal = function(projectId) {
   document.body.style.overflow = 'hidden'; // Stop page scrolling
 };
 
-window.closeProjectModal = function(event) {
+window.closeProjectModal = function (event) {
   const modal = document.getElementById('projectModal');
-  
+
   // Close only if click is overlay background or explicitly triggered
   if (event === null || event.target === modal) {
     modal.classList.remove('open');
