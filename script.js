@@ -18,8 +18,8 @@ const projectsData = {
   },
   aicontent: {
     title: "AI_Content_Repurposer",
-    status: "Not Deployed",
-    statusClass: "badge-not-deployed",
+    status: "Live",
+    statusClass: "badge-live",
     desc: "An intelligent content transformation platform that repurposes lengthy textual files, online articles, or media transcripts into customized marketing newsletters and social summaries.",
     features: [
       "Generative AI model integrations with OpenAI GPT and Google Gemini API for semantic content analysis.",
@@ -30,7 +30,7 @@ const projectsData = {
     ],
     tags: ["Java", "Spring Boot", "OpenAI API", "Gemini API", "REST API", "Thymeleaf"],
     codeLink: "https://github.com/Mritunjay28/AI_Content_Repurposer",
-    liveLink: "#"
+    liveLink: "https://mrituai.netlify.app/"
   },
   jobportal: {
     title: "Job-Portal-API",
