@@ -1137,3 +1137,37 @@ main {
   justify-content: flex-end;
   gap: 0.75rem;
 }
+
+/* ===== Visual polish: motion + emphasis ===== */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Scroll reveal (class added by JS only; content visible without JS) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.revealed { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* Tech tags: gentle hover lift; core stack gets a subtle accent ring */
+.tech-tag {
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+@media (hover: hover) {
+  .tech-tag:hover { transform: translateY(-2px); }
+}
+.tech-tag.core {
+  border-color: hsl(var(--foreground) / 0.45);
+  box-shadow: 0 0 0 1px hsl(var(--foreground) / 0.15);
+}
+
+/* Flagship project: subtle gradient and stronger border */
+.project-item.featured {
+  border-color: hsl(var(--foreground) / 0.3);
+  background: linear-gradient(135deg, hsl(var(--accent) / 0.55), hsl(var(--accent) / 0.2));
+}
