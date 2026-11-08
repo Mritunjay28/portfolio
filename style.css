@@ -1225,3 +1225,9 @@ main {
   border-color: hsl(var(--foreground) / 0.4);
   box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.4);
 }
+
+/* Slide-in entrances: projects from the left, tech groups from the right */
+@media (prefers-reduced-motion: no-preference) {
+  .project-item.reveal:not(.revealed) { transform: translateX(-32px); }
+  .tech-groups > div.reveal:not(.revealed) { transform: translateX(32px); }
+}
