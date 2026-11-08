@@ -1,7 +1,7 @@
 // Global project metadata
 const projectsData = {
   urlshortener: {
-    title: "URL_Shortner",
+    title: "URL Shortner",
     status: "Live",
     statusClass: "badge-live",
     desc: "A high-concurrency URL shortener API handling instant redirections, alias mappings, and request telemetry.",
@@ -17,7 +17,7 @@ const projectsData = {
     liveLink: "https://mrti.netlify.app/"
   },
   aicontent: {
-    title: "AI_Content_Repurposer",
+    title: "AI Content Repurposer",
     status: "Live",
     statusClass: "badge-live",
     desc: "An intelligent content transformation platform that repurposes lengthy textual files, online articles, or media transcripts into customized marketing newsletters and social summaries.",
@@ -250,11 +250,19 @@ function initScrollReveal() {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const targets = document.querySelectorAll('.project-item, .experience-item, .tech-groups > div');
-  targets.forEach(t => t.classList.add('reveal'));
+  const perParent = new Map();
+  targets.forEach(t => {
+    t.classList.add('reveal');
+    const p = t.parentElement;
+    const i = perParent.get(p) || 0;
+    perParent.set(p, i + 1);
+    t.style.transitionDelay = Math.min(i * 90, 450) + 'ms';
+  });
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('revealed');
+        setTimeout(() => { e.target.style.transitionDelay = '0ms'; }, 700);
         io.unobserve(e.target);
       }
     });
