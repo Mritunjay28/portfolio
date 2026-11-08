@@ -48,22 +48,6 @@ const projectsData = {
     codeLink: "https://github.com/Mritunjay28/iiit-bhubaneswar-mritunjay-senapati-hackathon",
     liveLink: "#"
   },
-  jobportal: {
-    title: "Job-Portal-API",
-    status: "Not Deployed",
-    statusClass: "badge-not-deployed",
-    desc: "A production-ready, secure RESTful API for a job recruitment portal platform built with Spring Boot, MySQL, and JPA.",
-    features: [
-      "Secure user registration and role-based access control (Admin, Recruiter, Candidate) using Spring Security.",
-      "Comprehensive CRUD endpoints for creating, editing, and deleting job postings with advanced search filters.",
-      "Application pipeline allowing candidates to apply for jobs and recruiters to manage application status.",
-      "Document upload system for candidate resume processing and storage integration.",
-      "Optimized JPA database relationships (One-to-Many, Many-to-Many) ensuring referential integrity and fast queries."
-    ],
-    tags: ["Java", "Spring Boot", "MySQL", "Spring Security", "JPA", "REST API", "Docker"],
-    codeLink: "https://github.com/Mritunjay28/Job-Portal-API",
-    liveLink: "#"
-  }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
