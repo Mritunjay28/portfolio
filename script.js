@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrambler();
   initMobileMenu();
   initHeaderScroll();
+  initScrollReveal();
 });
 
 // --- Theme Management ---
@@ -242,4 +243,21 @@ function initHeaderScroll() {
       nav.classList.remove('scrolled');
     }
   });
+}
+
+// --- Scroll Reveal ---
+function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const targets = document.querySelectorAll('.project-item, .experience-item, .tech-groups > div');
+  targets.forEach(t => t.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(t => io.observe(t));
 }
