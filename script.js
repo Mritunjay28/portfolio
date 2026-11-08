@@ -32,6 +32,22 @@ const projectsData = {
     codeLink: "https://github.com/Mritunjay28/AI_Content_Repurposer",
     liveLink: "https://mrituai.netlify.app/"
   },
+  riskengine: {
+    title: "Financial Risk Engine",
+    status: "Not Deployed",
+    statusClass: "badge-not-deployed",
+    desc: "An event-driven pipeline that ingests financial news and social media text, scores it with FinBERT NLP, and automatically stress-tests a synthetic $585M multi-asset portfolio when a high-impact risk signal is detected. Built for the S&P Global & CRISIL Code to Connect hackathon.",
+    features: [
+      "FinBERT NLP service on FastAPI scoring sentiment from -1 to +1 and classifying text into 7 financial event types with an explainable 1-10 impact score.",
+      "Rule A1 auto-trigger that runs a portfolio stress test whenever a signal reaches an impact score of 7 or higher.",
+      "Deterministic stress testing on a synthetic $585M, 15-holding portfolio with per-asset P&L, sector attribution, and VaR 95/99.",
+      "Spring Boot orchestrator persisting every signal and stress-test result to PostgreSQL as a complete audit trail.",
+      "React dashboard visualizing risk signals, portfolio impact charts, and stress test history, with all four services wired via Docker Compose."
+    ],
+    tags: ["Java", "Spring Boot", "FastAPI", "FinBERT", "PostgreSQL", "React", "Docker"],
+    codeLink: "https://github.com/Mritunjay28/iiit-bhubaneswar-mritunjay-senapati-hackathon",
+    liveLink: "#"
+  },
   jobportal: {
     title: "Job-Portal-API",
     status: "Not Deployed",
