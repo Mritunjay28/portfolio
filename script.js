@@ -34,7 +34,7 @@ const projectsData = {
   },
   riskengine: {
     title: "Financial Risk Engine",
-    status: "Not Deployed",
+    status: "GitHub",
     statusClass: "badge-not-deployed",
     desc: "An event-driven pipeline that ingests financial news and social media text, scores it with FinBERT NLP, and automatically stress-tests a synthetic $585M multi-asset portfolio when a high-impact risk signal is detected. Built for the S&P Global & CRISIL Code to Connect hackathon.",
     features: [
