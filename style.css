@@ -619,8 +619,17 @@ main {
 }
 
 /* Projects list */
+#projects {
+  display: flex;
+  flex-direction: column;
+}
+
 .projects-list {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .project-item {
